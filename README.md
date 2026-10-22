@@ -40,7 +40,7 @@ This repo unifies widely used disaster mapping benchmarks and representative dee
 - **NEW (2026 extension):** oil spills · avalanches · volcanic eruptions · tsunami inundation · hurricane/cyclone surge · glacial lake outburst floods (GLOF) · dust/sand storms · wildfire smoke plumes · locust outbreaks — see the [extended domains table](#-extended-disaster-domains-9-new) and [docs/ADDITIONAL_DISASTERS.md](docs/ADDITIONAL_DISASTERS.md) for 21 more candidates.
 
 It is designed to help researchers:
-- Reproduce the results reported in our paper
+- Reproduce the results reported in the upstream benchmark paper
 - Evaluate models under a unified protocol
 - Use strong baselines out of the box
 - Build and test their own improvements with minimal engineering overhead
@@ -369,7 +369,7 @@ Upstream: built on the AnyDisaster benchmark - Chen et al. 2026, DOI 10.2139/ssr
 
 
 ## 🙋Q & A
-For any questions, please feel free to leave it in the issue section or send inquiry email to qschrx@gmail.com.
+For any questions, please feel free to leave it in the issue section or send inquiry email to alsyedrafiahmed@gmail.com.
 
 ## License
 
