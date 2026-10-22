@@ -50,7 +50,7 @@ jobs:
           pip install torch==${{ matrix.torch-version }} torchvision==${TV} --index-url https://download.pytorch.org/whl/cpu
 
       - name: Install package
-        run: pip install -e . -c constraints.txt
+        run: pip install -e . -c constraints.txt pytest
 
       - name: Syntax-compile the whole tree
         run: python -W error::SyntaxWarning -m compileall -q src scripts tests tools gradio_demo train.py test.py
@@ -87,7 +87,7 @@ jobs:
           pip install torch==${{ matrix.torch-version }} torchvision==${TV} --index-url https://download.pytorch.org/whl/cpu
 
       - name: Install package
-        run: pip install -e . -c constraints.txt
+        run: pip install -e . -c constraints.txt pytest
 
       # CPU hosts: glof_scd is skipped honestly (SSM kernels need CUDA).
       # The import job above already proves every model module loads.

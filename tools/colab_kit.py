@@ -663,6 +663,13 @@ def export_results_zip_hub(ns: dict) -> str:
 # Fixes vs originals: clear_output is imported properly; google.colab is
 # optional so the notebooks also run end-to-end outside Colab.
 # ---------------------------------------------------------------------------
+try:  # IPython exists in every notebook host (Colab/Jupyter); optional elsewhere.
+    from IPython.display import clear_output
+except ImportError:  # tests / plain Python: no cell output to clear
+    def clear_output(*_args, **_kwargs):
+        return None
+
+
 def _notebook_gfiles():
     try:
         from google.colab import files
@@ -699,7 +706,6 @@ def nb_apply(ns: dict, kind: str, arr) -> None:
 
 
 def nb_upload_pre(ns: dict, _=None) -> None:
-    from IPython.display import clear_output
     gfiles = _notebook_gfiles()
     with ns["out_up"]:
         clear_output()
@@ -720,7 +726,6 @@ def nb_upload_pre(ns: dict, _=None) -> None:
 
 
 def nb_upload_post(ns: dict, _=None) -> None:
-    from IPython.display import clear_output
     gfiles = _notebook_gfiles()
     with ns["out_up"]:
         clear_output()
@@ -741,7 +746,6 @@ def nb_upload_post(ns: dict, _=None) -> None:
 
 
 def nb_use_synthetic(ns: dict, _=None) -> None:
-    from IPython.display import clear_output
     seed = random.randint(0, 9999)
     pre, post, gt = make_synthetic(ns["STATE"]["domain"], 512, 512, seed=seed)
     ns["STATE"].update(pre=pre, post=post, gt=gt, source="synthetic")
