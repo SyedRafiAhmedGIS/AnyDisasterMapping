@@ -1,0 +1,43 @@
+name: Docs
+
+# Round 5: the mkdocs site builds --strict locally but was never shipped.
+# Deploy it to GitHub Pages whenever the docs sources change on main.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "README.md"
+      - ".github/workflows/docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: pages-docs
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # mkdocs-material git-committers / revision dates
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install docs toolchain
+        run: pip install mkdocs-material mkdocs-redirects
+
+      - name: Strict build (same gate as CI)
+        run: mkdocs build --strict
+
+      - name: Deploy to gh-pages
+        run: mkdocs gh-deploy --force --no-history

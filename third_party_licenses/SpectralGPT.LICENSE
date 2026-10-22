@@ -1,0 +1,26 @@
+Provenance: adapted from https://github.com/danfenghong/IEEE_TPAMI_SpectralGPT
+("SpectralGPT: Spectral Remote Sensing Foundation Model", IEEE TPAMI 2024)
+
+VERIFIED against the official SpectralGPT release (this supersedes the
+earlier inference "CC BY-NC from MAE"):
+
+1. The SpectralGPT authors' own code is released under **GPL-3.0**
+   (verbatim from the upstream LICENSE header):
+       Copyright (C) 2024 Danfeng Hong
+       This program is free software: you can redistribute it and/or modify
+       it under the terms of the GNU General Public License as published by
+       the Free Software Foundation, version 3 of the License.
+   Full text: `GPL-3.0.LICENSE`.
+
+2. Parts of the upstream SpectralGPT code are derived from Meta's MAE
+   repository (files carrying "Copyright (c) Meta Platforms, Inc. and
+   affiliates."), which upstream is **CC BY-NC 4.0** (`MAE.LICENSE`).
+   Note that redistributing CC BY-NC MAE code inside a GPL-3.0 repository
+   is an upstream inconsistency we inherit; the practical effect is that
+   the MAE-derived lines remain NON-COMMERCIAL regardless of the GPL-3.0
+   wrapper.
+
+Consequence for this distribution: treat `src/models/SpectralGPT/` as
+RESEARCH-ONLY (the most restrictive of the mixed terms: CC BY-NC for the
+Meta-derived parts). GPL-3.0 additionally applies to the SpectralGPT-authored
+parts (copy-left on distribution). See NOTICE and README ("License").

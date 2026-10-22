@@ -1,0 +1,5 @@
+Adapted from whu-sigma/hypersigma (HyperSIGMA, TPAMI 2025) — upstream is
+Apache-2.0 (verified). Embedded third-party snippets keep MIT headers
+(BEiT/unilm — Microsoft, MIT). No non-commercial restriction applies to
+this folder.
+See ../../../third_party_licenses/HyperSigma.LICENSE and BEiT-unilm.LICENSE.

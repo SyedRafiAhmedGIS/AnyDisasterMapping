@@ -1,0 +1,12 @@
+RESOLVED 2026-10-22 against the official release
+(danfenghong/IEEE_TPAMI_SpectralGPT):
+
+- SpectralGPT-authored code: GPL-3.0 (verified from the upstream LICENSE
+  header) — copy-left on distribution, commercial use permitted only if the
+  combined work stays GPL-3.0-compatible.
+- MAE-derived files (Meta header): CC BY-NC 4.0 upstream — NON-COMMERCIAL,
+  regardless of the GPL-3.0 wrapper.
+
+Treat this folder as RESEARCH-ONLY (most restrictive embedded term).
+See ../../../third_party_licenses/SpectralGPT.LICENSE, GPL-3.0.LICENSE and
+MAE.LICENSE.

@@ -1,0 +1,4 @@
+Adapted from justchenhao/BIT_CD — upstream ships no LICENSE file; its README
+states: "Code is released for non-commercial and research purposes only."
+NON-COMMERCIAL / RESEARCH-ONLY — NOT Apache-2.0.
+See ../../../third_party_licenses/BIT.LICENSE.

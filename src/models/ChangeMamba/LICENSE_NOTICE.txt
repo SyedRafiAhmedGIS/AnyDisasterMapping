@@ -1,0 +1,8 @@
+Mixed upstream terms, resolved 2026-10-22 against each official release:
+- ChangeMamba-authored parts: Apache-2.0 (ChenHongruixuan/ChangeMamba)
+  -> ../../../third_party_licenses/ChangeMamba.LICENSE
+- VMamba parts: MIT (MzeroMiko/VMamba)
+  -> ../../../third_party_licenses/VMamba.LICENSE
+- Mamba (state-spaces) parts: Apache-2.0
+  -> ../../../third_party_licenses/Mamba.LICENSE
+No non-commercial restriction applies to this folder.

@@ -1,0 +1,14 @@
+Provenance: adapted from https://github.com/justchenhao/BIT_CD
+("Remote Sensing Image Change Detection with Transformers", IEEE TGRS 2022)
+
+The upstream repository ships NO separate LICENSE file. Its README states,
+verbatim:
+
+    ## License
+    Code is released for non-commercial and research purposes **only**.
+    For commercial purposes, please contact the authors.
+
+Consequence for this distribution: the `src/models/BIT/` component is
+RESEARCH-ONLY / NON-COMMERCIAL. It must not be used for commercial purposes
+without written permission from the BIT authors. For the repository-wide
+licensing decision see NOTICE and README ("License").

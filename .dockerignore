@@ -1,0 +1,31 @@
+# data & run artifacts never belong in the image
+data/
+results/
+exports/
+checkpoints/
+*.pth
+*.onnx
+*.onnx.data
+*.torchscript.pt
+
+# python / tooling caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# docs build + venvs
+site/
+.venv/
+venv/
+
+# editor noise
+.vscode/
+.idea/
+.DS_Store
+
+# colab working files
+*.zip
+.gradio/

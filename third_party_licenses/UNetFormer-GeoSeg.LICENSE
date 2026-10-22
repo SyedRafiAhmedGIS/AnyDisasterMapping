@@ -1,0 +1,15 @@
+Provenance: UNetFormer decoder adapted from
+https://github.com/WangLibo1995/GeoSeg
+("UNetFormer: A UNet-like transformer for efficient semantic segmentation of
+remote sensing urban scene imagery", ISPRS Journal 2022)
+
+The upstream GeoSeg repository is licensed **GPL-3.0** (GitHub license badge;
+full text in `GPL-3.0.LICENSE`, fetched from the upstream repository's own
+LICENSE file).
+
+Consequence for this distribution: the UNetFormer decoder code carries the
+GPL-3.0 terms. GPL-3.0 permits commercial use BUT is copy-left: if you
+distribute a work that includes this component, that distribution must be
+licensed under GPL-3.0 (or a compatible license) and must provide source.
+This is one of the reasons the repository as a whole is positioned as a
+RESEARCH distribution — see NOTICE and README ("License").

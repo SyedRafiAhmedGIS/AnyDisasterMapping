@@ -1,0 +1,2 @@
+mix_transformer.py / segformer_head.py are under the NVIDIA Source Code License
+(NON-COMMERCIAL use only), NOT Apache-2.0. See ../../../third_party_licenses/SegFormer.LICENSE.

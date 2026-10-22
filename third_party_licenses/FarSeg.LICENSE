@@ -1,0 +1,15 @@
+Provenance: adapted from https://github.com/Z-Zheng/FarSeg
+("Foreground-Aware Relation Network for Geospatial Object Segmentation",
+CVPR 2020; FarSeg++ in IEEE TPAMI)
+
+The upstream repository is licensed Apache-2.0 (GitHub license badge +
+LICENSE file in the upstream repo).
+
+A full copy of the Apache License, Version 2.0 shipped with this
+distribution is in `Apache-2.0.LICENSE` (and applies to the
+`src/models/FarSeg/` component and the `FarSeg.py` / `FarSegPP.py`
+adaptations). Note: the repository-local single-file re-implementation
+`src/models/FarSeg.py` carries its own MIT header from the community
+re-implementation it was based on — the more permissive of the two applies
+to that single file, Apache-2.0 governs the vendored `FarSeg/` folder.
+See also NOTICE.

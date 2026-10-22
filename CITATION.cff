@@ -1,0 +1,145 @@
+cff-version: 1.2.0
+message: >-
+  If you use AnyDisasterMapping (code, benchmarks or the Colab collection)
+  in your research, please cite both this software repository and the
+  companion review paper (preferred-citation below).
+title: AnyDisasterMapping — extended
+type: software
+authors:
+  - family-names: Chen
+    given-names: Hongruixuan
+  - family-names: Song
+    given-names: Jian
+  - family-names: Xuan
+    given-names: Weihao
+  - family-names: Wang
+    given-names: Junjue
+  - family-names: Qi
+    given-names: Heli
+  - family-names: Zhou
+    given-names: Zeqi
+  - family-names: Dai
+    given-names: Pengyu
+  - family-names: Dietrich
+    given-names: Olivier
+  - family-names: Gutierrez
+    given-names: Erika
+  - family-names: Bromly
+    given-names: Lars
+  - family-names: Nemni
+    given-names: Edoardo
+  - family-names: Ou
+    given-names: Yafei
+  - family-names: Zhao
+    given-names: Jie
+  - family-names: Zheng
+    given-names: Zhuo
+  - family-names: Xu
+    given-names: Yonghao
+  - family-names: Hänsch
+    given-names: Ronny
+  - family-names: Jiao
+    given-names: Wenzhe
+  - family-names: Chini
+    given-names: Marco
+  - family-names: Persello
+    given-names: Claudio
+  - family-names: Xia
+    given-names: Junshi
+  - family-names: Lu
+    given-names: Shijian
+  - family-names: Wang
+    given-names: Lixin
+  - family-names: Zhu
+    given-names: Zhe
+  - family-names: Shelhamer
+    given-names: Evan
+  - family-names: Chanussot
+    given-names: Jocelyn
+  - family-names: Schindler
+    given-names: Konrad
+  - family-names: Yokoya
+    given-names: Naoto
+version: v5.0.0
+date-released: "2026-10-22"
+license: Apache-2.0
+repository-code: "https://github.com/SyedRafiAhmedGIS/AnyDisasterMapping"
+url: "https://github.com/SyedRafiAhmedGIS/AnyDisasterMapping"
+abstract: >-
+  A unified PyTorch codebase for Earth-observation disaster mapping: 24
+  registered benchmark datasets across 13 disaster domains (segmentation,
+  change detection, and semantic change detection), 34 model
+  implementations, one-command smoke tests, an export/ONNX path, and a
+  17-notebook Colab collection sharing a single tested core
+  (tools/colab_kit.py).
+keywords:
+  - remote sensing
+  - disaster mapping
+  - change detection
+  - semantic segmentation
+  - benchmark
+  - deep learning
+preferred-citation:
+  type: article
+  title: >-
+    Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges
+    and Future Perspectives
+  authors:
+    - family-names: Chen
+      given-names: Hongruixuan
+    - family-names: Song
+      given-names: Jian
+    - family-names: Xuan
+      given-names: Weihao
+    - family-names: Wang
+      given-names: Junjue
+    - family-names: Qi
+      given-names: Heli
+    - family-names: Zhou
+      given-names: Zeqi
+    - family-names: Dai
+      given-names: Pengyu
+    - family-names: Dietrich
+      given-names: Olivier
+    - family-names: Gutierrez
+      given-names: Erika
+    - family-names: Bromly
+      given-names: Lars
+    - family-names: Nemni
+      given-names: Edoardo
+    - family-names: Ou
+      given-names: Yafei
+    - family-names: Zhao
+      given-names: Jie
+    - family-names: Zheng
+      given-names: Zhuo
+    - family-names: Xu
+      given-names: Yonghao
+    - family-names: Hänsch
+      given-names: Ronny
+    - family-names: Jiao
+      given-names: Wenzhe
+    - family-names: Chini
+      given-names: Marco
+    - family-names: Persello
+      given-names: Claudio
+    - family-names: Xia
+      given-names: Junshi
+    - family-names: Lu
+      given-names: Shijian
+    - family-names: Wang
+      given-names: Lixin
+    - family-names: Zhu
+      given-names: Zhe
+    - family-names: Shelhamer
+      given-names: Evan
+    - family-names: Chanussot
+      given-names: Jocelyn
+    - family-names: Schindler
+      given-names: Konrad
+    - family-names: Yokoya
+      given-names: Naoto
+  year: 2026
+  doi: 10.2139/ssrn.6725082
+  url: "https://ssrn.com/abstract=6725082"
+  notes: SSRN preprint

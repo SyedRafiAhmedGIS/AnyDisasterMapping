@@ -1,0 +1,5 @@
+Adapted from GeoZcx/A-deeply-supervised-image-fusion-network-for-change-detection-in-remote-sensing-images
+— upstream ships no LICENSE file; its README states: "Code and datasets are
+released for non-commercial and research purposes only."
+NON-COMMERCIAL / RESEARCH-ONLY — NOT Apache-2.0.
+See ../../../third_party_licenses/DSIFN.LICENSE.

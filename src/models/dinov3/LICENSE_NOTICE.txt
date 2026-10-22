@@ -1,0 +1,2 @@
+This directory contains third-party code under the DINOv3 License Agreement,
+NOT Apache-2.0. See ../../../third_party_licenses/DINOv3.LICENSE.md and THIRD_PARTY_NOTICES.md.

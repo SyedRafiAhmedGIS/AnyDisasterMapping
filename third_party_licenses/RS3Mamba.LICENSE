@@ -1,0 +1,13 @@
+Provenance: adapted from
+https://github.com/walking-shadow/Official_Remote_Sensing_Mamba
+("Official code of Remote Sensing Mamba" — RS3Mamba / RSMamba,
+IEEE GRSL / TGRS 2024)
+
+The upstream repository states, verbatim:
+
+    ## License
+    This project is licensed under the Apache 2.0 License.
+
+A full copy of the Apache License, Version 2.0 shipped with this
+distribution is in `Apache-2.0.LICENSE` (and applies to the
+`src/models/RS3Mamba/` component). See also NOTICE.

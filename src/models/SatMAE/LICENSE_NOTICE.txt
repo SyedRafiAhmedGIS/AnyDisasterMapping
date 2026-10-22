@@ -1,0 +1,2 @@
+MAE/SatMAE-derived code: CC BY-NC 4.0 upstream (NON-COMMERCIAL), NOT Apache-2.0.
+See ../../../third_party_licenses/SatMAE.LICENSE and MAE.LICENSE.

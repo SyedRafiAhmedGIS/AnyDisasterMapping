@@ -1,0 +1,63 @@
+task: seg
+num_classes: 3
+ignore_index: 255
+seed: 42
+model:
+  name: segformer
+  kwargs:
+    in_channels: 3
+    num_classes: 3
+    backbone: mit_b2
+dataset:
+  name: smoke_plume
+  train:
+    dataset_path: data/smoke_plume/SMOKE_MODIS
+    data_list_path: data/smoke_plume/SMOKE_MODIS/train.txt
+    split: train
+  val:
+    dataset_path: data/smoke_plume/SMOKE_MODIS
+    data_list_path: data/smoke_plume/SMOKE_MODIS/val.txt
+    split: val
+  test:
+    dataset_path: data/smoke_plume/SMOKE_MODIS
+    data_list_path: data/smoke_plume/SMOKE_MODIS/test.txt
+    split: test
+augmentation:
+  train:
+    RandomCrop:
+      height: 256
+      width: 256
+    HorizontalFlip:
+      p: 0.5
+    VerticalFlip:
+      p: 0.5
+    RandomRotate90:
+      p: 1.0
+    Normalize:
+      mean: [0.485, 0.456, 0.406]
+      std: [0.229, 0.224, 0.225]
+      max_pixel_value: 1.0
+  val:
+    Normalize:
+      mean: [0.485, 0.456, 0.406]
+      std: [0.229, 0.224, 0.225]
+      max_pixel_value: 1.0
+optimizer:
+  name: AdamW
+  learning_rate: 0.0001
+  weight_decay: 0.005
+scheduler:
+  name: CosineAnnealingLR
+  step_mode: epoch
+  kwargs:
+    T_max: 100
+loss:
+  use_lovasz: False
+  lovasz_weight: 0.75
+training:
+  num_epochs: 100
+  train_batch_size: 8
+  eval_batch_size: 1
+  num_workers: 4
+  metric_for_best_model: mIoU
+output_dir: ./results/smoke_plume/smoke_modis/seg_segformer_b2

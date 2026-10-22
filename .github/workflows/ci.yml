@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  # Round 5: first-party lint gate (vendored model dirs are excluded in
+  # pyproject [tool.ruff]; notebooks have their own AST/structure validator).
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff
+      - name: Ruff (first-party code, see pyproject [tool.ruff])
+        run: ruff check .
+      - name: Notebook validator (JSON + AST + dedup + KIT_REV pin + README)
+        run: python scripts/validate_notebooks.py
+
+  syntax-and-imports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+        # Cover the range constraints.txt allows: the floor (2.5.1) and the
+        # newest verified CPU torch. Rationale: torch>=2.1,<3 is allowed by
+        # constraints.txt; testing only the floor let newer-torch breakages
+        # (e.g. torch.onnx / amp deprecations) land unseen.
+        torch-version: ["2.5.1", "2.14.1"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install CPU torch ${{ matrix.torch-version }} (avoids CUDA wheels)
+        run: |
+          python -m pip install --upgrade pip
+          if [ "${{ matrix.torch-version }}" = "2.5.1" ]; then TV=0.20.1; else TV=0.29.1; fi
+          pip install torch==${{ matrix.torch-version }} torchvision==${TV} --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install package
+        run: pip install -e . -c constraints.txt
+
+      - name: Syntax-compile the whole tree
+        run: python -W error::SyntaxWarning -m compileall -q src scripts tests tools gradio_demo train.py test.py
+
+      - name: Import every registered model / dataset / task
+        run: pytest tests/test_registry_import_all.py -v
+
+      - name: Unit + integrity tests (safe loading, dvc/Docker/README drift, weights tool, Colab kit)
+        run: pytest tests/test_repo_integrity.py tests/test_download_weights.py tests/test_safe_load.py tests/test_colab_kit.py -v
+
+      - name: Placeholder sweep (YOUR_GITHUB_USERNAME etc.)
+        run: |
+          ! grep -rn "YOUR_GITHUB_USERNAME" --include="*.py" --include="*.ipynb" --include="*.md" --include="*.yaml" --include="*.toml" .
+
+  smoke-one-domain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    needs: syntax-and-imports
+    strategy:
+      fail-fast: false
+      matrix:
+        torch-version: ["2.5.1", "2.14.1"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install CPU torch ${{ matrix.torch-version }}
+        run: |
+          python -m pip install --upgrade pip
+          if [ "${{ matrix.torch-version }}" = "2.5.1" ]; then TV=0.20.1; else TV=0.29.1; fi
+          pip install torch==${{ matrix.torch-version }} torchvision==${TV} --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install package
+        run: pip install -e . -c constraints.txt
+
+      # CPU hosts: glof_scd is skipped honestly (SSM kernels need CUDA).
+      # The import job above already proves every model module loads.
+      - name: End-to-end smoke (train 1 epoch + test.py)
+        run: python scripts/smoke_test_all_domains.py
+
+      - name: Trainer / test.py regressions (max_steps, stale-result detection)
+        run: pytest tests/test_trainer_regressions.py -v

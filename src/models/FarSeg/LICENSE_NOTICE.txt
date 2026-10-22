@@ -1,0 +1,4 @@
+Adapted from Z-Zheng/FarSeg (CVPR 2020; FarSeg++ TPAMI) — upstream is
+Apache-2.0. Commercial use permitted under Apache-2.0 terms. The repository-
+local single-file re-implementation `../FarSeg.py` carries its own MIT header.
+See ../../../third_party_licenses/FarSeg.LICENSE and Apache-2.0.LICENSE.

@@ -1,0 +1,17 @@
+Provenance: adapted from https://github.com/Z-Zheng/ChangeOS
+("Building damage assessment for rapid disaster response with a deep
+object-based semantic change detection framework", RSE 2021)
+
+VERIFIED against the upstream repository (GitHub API + repository page,
+2026-10): the upstream ChangeOS repository ships **NO license** — the
+license field is null and no LICENSE file or README license statement
+exists.
+
+Consequence for this distribution: absent an upstream license, the ChangeOS
+code remains **all rights reserved by its authors** by default. The vendored
+`src/models/ChangeOS.py` is included here under the good-faith research-use
+convention common in the remote-sensing community, but redistribution and
+commercial use are NOT covered by any granted license. Contact the ChangeOS
+authors for terms before any commercial deployment. This is one of the
+reasons the repository as a whole is positioned as a RESEARCH distribution —
+see NOTICE and README ("License").

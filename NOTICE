@@ -1,0 +1,18 @@
+AnyDisasterMapping-extended
+Copyright (c) the AnyDisasterMapping-extended authors
+
+LICENSING DECISION (2026-10-22): this distribution is RESEARCH-ONLY.
+The original code of this repository is licensed under the Apache License,
+Version 2.0 (see LICENSE), but the repository as a whole is NOT freely
+usable for commercial purposes, because it bundles third-party source code
+that keeps its own, in several cases more restrictive, terms (non-commercial
+/ research-only components, GPL-3.0 copy-left components, one component
+whose upstream ships no license at all, and Meta's DINOv3 License
+Agreement). See THIRD_PARTY_NOTICES.md for the component-by-component list
+and third_party_licenses/ for the full texts (upstream terms verified
+against each official release on 2026-10-22).
+
+If you redistribute this repository, or any of the directories listed there,
+you must keep this NOTICE, THIRD_PARTY_NOTICES.md and third_party_licenses/.
+
+Built with DINOv3 (Meta Platforms, Inc.) — see third_party_licenses/DINOv3.LICENSE.md.

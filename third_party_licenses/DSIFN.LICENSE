@@ -1,0 +1,16 @@
+Provenance: adapted from
+https://github.com/GeoZcx/A-deeply-supervised-image-fusion-network-for-change-detection-in-remote-sensing-images
+("A deeply supervised image fusion network for change detection in high
+resolution bi-temporal remote sensing images", ISPRS 2021)
+
+The upstream repository ships NO separate LICENSE file. Its README states,
+verbatim:
+
+    License
+    Code and datasets are released for non-commercial and research
+    purposes only. For commercial purposes, please contact the authors.
+
+Consequence for this distribution: the `src/models/DSIFN/` component is
+RESEARCH-ONLY / NON-COMMERCIAL. It must not be used for commercial purposes
+without written permission from the DSIFN authors. For the repository-wide
+licensing decision see NOTICE and README ("License").

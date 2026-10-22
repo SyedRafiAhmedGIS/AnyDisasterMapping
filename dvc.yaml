@@ -1,0 +1,72 @@
+# DVC pipeline — data -> train -> test for one domain.
+# CI does NOT use DVC (synthetic dummies only); these stages are for
+# reproducible runs. See docs/DATA_VERSIONING.md.
+#
+# The defaults below run the GLOF domain end-to-end on synthetic dummy data
+# (generator: scripts/data_prep/glof/make_dummy.py, config: configs/glof/...),
+# mirroring scripts/smoke_test_all_domains.py. To use real, licensed data:
+#   1. replace the `make_data` cmd with your adapter / download step,
+#   2. point `data_dir` at the prepared dataset (needs train.txt/val.txt/test.txt),
+#   3. raise `epochs` and drop the smoke-only overrides in `train`.
+#
+# Quick start:
+#   pip install dvc && dvc repro
+
+vars:
+  - config: configs/glof/icimod/seg_unet.yaml
+  - data_dir: data/glof/ICIMOD_SMOKE
+  - run_dir: results/glof_unet_dvc
+  - epochs: 1
+
+stages:
+  make_data:
+    desc: >
+      Prepare the dataset for this domain. Swap the dummy generator for your
+      licensed adapter once access is granted; the split files
+      (train/val/test.txt) are what every later stage depends on.
+    cmd: >
+      python scripts/data_prep/glof/make_dummy.py
+      --out ${data_dir}
+      --size 64 --n-train 4 --n-val 2 --n-test 2
+    deps:
+      - scripts/data_prep/glof/make_dummy.py
+      - scripts/data_prep/_dummy_common.py
+    outs:
+      - ${data_dir}
+
+  train:
+    desc: Train the domain config (1 epoch on dummy data here; raise for real runs).
+    cmd: >
+      python train.py --config ${config} --override
+      dataset.train.dataset_path ${data_dir}
+      dataset.train.data_list_path ${data_dir}/train.txt
+      dataset.val.dataset_path ${data_dir}
+      dataset.val.data_list_path ${data_dir}/val.txt
+      dataset.test.dataset_path ${data_dir}
+      dataset.test.data_list_path ${data_dir}/test.txt
+      training.num_epochs ${epochs}
+      training.train_batch_size 2
+      training.eval_batch_size 1
+      training.num_workers 0
+      scheduler.name null
+      augmentation.train.RandomCrop.height 64
+      augmentation.train.RandomCrop.width 64
+      output_dir ${run_dir}
+    deps:
+      - ${config}
+      - train.py
+      - src
+      - ${data_dir}
+    outs:
+      - ${run_dir}
+
+  test:
+    desc: Evaluate the best checkpoint; metrics JSON is the pipeline output.
+    cmd: >
+      python test.py --exp_path ${run_dir} --checkpoint best.pth --force
+    deps:
+      - ${run_dir}
+      - test.py
+    metrics:
+      - ${run_dir}/test_metrics.json:
+          cache: false

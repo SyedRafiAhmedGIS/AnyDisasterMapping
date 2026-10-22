@@ -1,0 +1,14 @@
+Provenance: adapted from https://github.com/whu-sigma/hypersigma
+("HyperSIGMA: Hyperspectral Intelligence Comprehension Foundation Model",
+IEEE TPAMI 2025)
+
+VERIFIED against the official HyperSIGMA release: the upstream repository is
+licensed **Apache-2.0** (GitHub license badge + LICENSE file).
+
+Some files inside `src/models/HyperSigma/` retain MIT headers from the
+third-party components they were built on (e.g. BEiT/unilm — Microsoft,
+MIT; see `BEiT-unilm.LICENSE`). Both Apache-2.0 and MIT are
+commercial-friendly; neither restricts commercial use.
+
+A full copy of the Apache License, Version 2.0 shipped with this
+distribution is in `Apache-2.0.LICENSE`. See also NOTICE.

@@ -1,0 +1,96 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "any_disaster"
+version = "0.0.1"
+
+license = {text = "Apache-2.0 (original code); RESEARCH-ONLY distribution — bundled third-party model code keeps its own terms (non-commercial / GPL-3.0 / unlicensed components), see NOTICE and THIRD_PARTY_NOTICES.md"}
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy==1.26.4",
+    # Bounds mirrored from constraints.txt (see that file for the rationale).
+    # constraints.txt remains the source of truth for the verified set; these
+    # ranges only keep a bare `pip install .` from drifting to a known-bad
+    # major (e.g. numpy 2 with vendored NumPy-1 dtype-promotion code).
+    "torch>=2.1,<3",
+    "torchvision>=0.16,<1",
+    "albumentations==1.4.24",
+    "pyyaml",
+    "tqdm",
+    "imageio",
+    "tifffile",
+    "imagecodecs",
+    "scikit-image",
+    "matplotlib",
+    "rasterio",
+    "termcolor",
+    "prettytable",
+    "safetensors",
+    "yacs",          # for HRNet config
+    "timm",          # for SegFormer, SatMAE, etc.
+    "h5py",          # for Landslide4Sense, FireSpread
+    "hdf5plugin",    # for FLOGA
+    "scikit-learn",  # for FLOGA
+    "einops",        # for ChangeMamba
+    "fvcore",        # for ChangeMamba
+    "tensorboardX",  # for logging
+    # foundation model dependencies (optional, needed for specific models)
+    "transformers>=4.57.1,<5",  # for Mask2Former, CLIPDPT, SAMDPT; 5.x has breaking changes. NOTE: 4.57.0 was yanked from PyPI — do not pin it.
+    "peft",          # for DINOV2DPT_LoRA
+    "hydra-core",    # for SAM2
+    "pandas",
+    # data setup
+    "Pillow",
+    "huggingface_hub>=0.34,<1",     # for the UrbanSARFloods download helper; transformers 4.x requires <1
+    "opencv-python-headless",
+    "shapely",              # for xBD polygon masks
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+export = [
+    "onnx>=1.15",
+    "onnxscript",
+    "onnxruntime>=1.17",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+# ---------------------------------------------------------------------------
+# Ruff (lint) — Round 5: first-party code only; vendored model dirs excluded.
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 200
+target-version = "py310"
+extend-exclude = [
+    "*.ipynb",
+    "src/models/BIT", "src/models/CLIP", "src/models/ChangeMamba",
+    "src/models/DSIFN", "src/models/FarSeg", "src/models/HRNet",
+    "src/models/HyperSigma", "src/models/RS3Mamba", "src/models/SAMDPT",
+    "src/models/SatMAE", "src/models/SegFormer", "src/models/SkySense",
+    "src/models/SpectralGPT", "src/models/dinov3", "src/models/mask2former",
+    "src/models/sam2",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "W"]
+ignore = [
+    "E741",  # ambiguous variable names (l/I) appear in vendored-style math code
+    "E731",  # lambdas are idiomatic in the notebook-kit delegates
+    "E722",  # broad excepts are deliberate in notebook bootstrap code
+    "E701",  # multiple statements on one line: compact kit-port style
+    "E702",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# data-prep scripts keep upstream variable wiring (assigned-but-unused is fine)
+"scripts/data_prep/*" = ["F841"]
+# imports after sys.path bootstrap by design
+"src/core/trainer.py" = ["E402"]
+"tools/export_onnx.py" = ["E402"]
