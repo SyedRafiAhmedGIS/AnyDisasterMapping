@@ -210,6 +210,8 @@ Dataset preparation guides are organized by disaster domain:
 
 ## 📦Pretrained Weights
 
+**Task checkpoints (model zoo) are hosted on Hugging Face: [SyedRafiAhmedGIS/AnyDisasterMapping-weights](https://huggingface.co/SyedRafiAhmedGIS/AnyDisasterMapping-weights)** — pull any zoo checkpoint with `python tools/download_weights.py --model unet` (SHA256 auto-verified). Currently published: `unet.pth` (oil-spill demo checkpoint).
+
  Recommended local checkpoint layout for the supported model zoo.
 
 Task-checkpoints from the project release can be listed and pulled with
