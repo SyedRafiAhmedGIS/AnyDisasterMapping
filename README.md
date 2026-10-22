@@ -364,23 +364,7 @@ If this code repo contributes to your research, please cite this repository (Bib
   url     = {https://github.com/SyedRafiAhmedGIS/AnyDisasterMapping}
 }
 
-**Upstream benchmark paper this project builds on (Chen et al. 2026):**
-
-@misc{chen2026earthobservationdisastermapping,
-  author       = {Chen, Hongruixuan and Song, Jian and Xuan, Weihao and Wang, Junjue
-                  and Qi, Heli and Zhou, Zeqi and Dai, Pengyu and Dietrich, Olivier
-                  and Gutierrez, Erika and Bromly, Lars and Nemni, Edoardo and Ou, Yafei
-                  and Zhao, Jie and Zheng, Zhuo and Xu, Yonghao and H{\"a}nsch, Ronny
-                  and Jiao, Wenzhe and Chini, Marco and Persello, Claudio and Xia, Junshi
-                  and Lu, Shijian and Wang, Lixin and Zhu, Zhe and Shelhamer, Evan
-                  and Chanussot, Jocelyn and Schindler, Konrad and Yokoya, Naoto},
-  title        = {Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives},
-  year         = {2026},
-  month        = {may},
-  note         = {SSRN preprint},
-  doi          = {10.2139/ssrn.6725082},
-  url          = {https://ssrn.com/abstract=6725082}
-}
+Upstream: built on the AnyDisaster benchmark - Chen et al. 2026, DOI 10.2139/ssrn.6725082 (full author list in CITATION.cff, references).
 ```
 
 
