@@ -44,7 +44,7 @@
 - [Architecture And Extension](#architecture-and-extension) -->
 
 ## 🔭Overview
-*Any Disaster Mapping* is the official repository for our [review paper in EO-based disaster mapping](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082).
+*Any Disaster Mapping* is the extended distribution built on the codebase released with the [review paper in EO-based disaster mapping](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082).
 
 One of our key motivations is that current disaster mapping research is highly fragmented: benchmarks, tasks, and model implementations are often inconsistent across papers, making fair evaluation, reproduction, and further development unnecessarily difficult.
 
@@ -370,8 +370,18 @@ Internal runtime design and extension entry points.
 - Extension guide: [docs/EXTENSION_GUIDE.md](docs/EXTENSION_GUIDE.md)
 
 ## 📜Reference
-If this code repo contributes to your research, please kindly consider citing our paper and give this repo ⭐️ :)
+If this code repo contributes to your research, please cite this repository (BibTeX below), and the upstream benchmark paper it builds on ⭐️ :)
 ```
+@software{ahmed2026anydisastermappingextended,
+  author  = {Ahmed, Syed Rafi},
+  title   = {AnyDisasterMapping -- extended: a unified PyTorch codebase for Earth-observation disaster mapping},
+  year    = {2026},
+  version = {v5.0.0},
+  url     = {https://github.com/SyedRafiAhmedGIS/AnyDisasterMapping}
+}
+
+**Upstream benchmark paper this project builds on (Chen et al. 2026):**
+
 @misc{chen2026earthobservationdisastermapping,
   author       = {Chen, Hongruixuan and Song, Jian and Xuan, Weihao and Wang, Junjue
                   and Qi, Heli and Zhou, Zeqi and Dai, Pengyu and Dietrich, Olivier
