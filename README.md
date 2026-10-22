@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">🌍Any Disaster Mapping</h1>
 
-<h3>Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives</h3>
+<h3>Natural disaster analysis from satellite imagery - floods, wildfires, oil spills, volcano eruptions, tsunamis, hurricane damage, avalanches, glacial lake outburst floods, dust storms, smoke plumes, locust outbreaks - 13 disaster domains</h3>
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c?logo=pytorch&logoColor=white)
