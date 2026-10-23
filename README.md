@@ -1,13 +1,15 @@
 <div align="center">
-<h1 align="center">🌍Any Disaster Mapping</h1>
+<h1 align="center">🌍 Natural Disaster Hazards Analysis — AnyDisasterMapping</h1>
 
-<h3>Natural disaster analysis from satellite imagery - floods, wildfires, oil spills, volcano eruptions, tsunamis, hurricane damage, avalanches, glacial lake outburst floods, dust storms, smoke plumes, locust outbreaks - 13 disaster domains</h3>
+<h3>Satellite Earth-Observation Analysis of Natural Disaster Hazards: Floods · Wildfires · Landslides · Hurricanes · Tsunamis · Volcanoes · Oil Spills &amp; More</h3>
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c?logo=pytorch&logoColor=white)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SyedRafiAhmedGIS/AnyDisasterMapping/blob/main/demo_colab.ipynb)
 ![License](https://img.shields.io/badge/License-Apache_2.0_core%2C_mixed_research--only_bundle-orange.svg)
-![Domains](https://img.shields.io/badge/Disaster%20domains-13-ff8a3d)
+![Domains](https://img.shields.io/badge/Disaster%20domains-13%2B9-ff8a3d)
+**Maintained by [Syed Rafi Ahmed](https://github.com/SyedRafiAhmedGIS)** · repo `SyedRafiAhmedGIS/AnyDisasterMapping`
+
 
 <img src="assets/hero_banner.png" alt="AnyDisasterMapping hero illustration (AI-generated)" width="860">
 
@@ -27,10 +29,16 @@
 - [Dataset Preparation](#dataset-preparation)
 - [Architecture And Extension](#architecture-and-extension) -->
 
-## 🔭Overview
-*Any Disaster Mapping* is the extended distribution built on the codebase released with the [review paper in EO-based disaster mapping](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082).
 
-One of our key motivations is that current disaster mapping research is highly fragmented: benchmarks, tasks, and model implementations are often inconsistent across papers, making fair evaluation, reproduction, and further development unnecessarily difficult.
+## 📖 Upstream Research
+The core framework was released with the review paper *"Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives"* (Chen et al., 2026, SSRN — [paper link](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082)). **All scientific credit for the original framework, benchmarks and code belongs to its 27 authors**, spanning RIKEN AIP, The University of Tokyo, Brown University, ETH Zurich, the United Nations Satellite Centre (UNOSAT), Stanford University, DLR, Texas A&M and more — full BibTeX in [Reference](#reference). This repository re-publishes and extends that framework for practical natural-hazard analysis. Licensing is unchanged: Apache-2.0 core with a research-only third-party bundle (see [License](#license)).
+
+---
+
+## 🔭Overview
+**AnyDisasterMapping** is maintained by [Syed Rafi Ahmed](https://github.com/SyedRafiAhmedGIS) as a working platform for **natural disaster hazards analysis**. The framework originates from the upstream [review paper on EO-based disaster mapping](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6725082) (see [Upstream Research](#-upstream-research)); this distribution extends it with 9 additional hazard domains, a 17-notebook Colab collection, CI-gated tests, and real-event analysis pipelines (e.g., the UrbanSARFloods flood-mapping chain).
+
+A key motivation of this distribution is that current disaster mapping research is highly fragmented: benchmarks, tasks, and model implementations are often inconsistent across papers, making fair evaluation, reproduction, and further development unnecessarily difficult.
 
 This repo unifies widely used disaster mapping benchmarks and representative deep learning models across major research directions, and provides a consistent training and evaluation pipeline for:
 - Infrastructure damage
