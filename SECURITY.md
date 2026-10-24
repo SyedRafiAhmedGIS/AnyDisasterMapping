@@ -11,7 +11,7 @@
 
 **Do not open a public issue for a suspected security problem.**
 
-1. Email **qschrx@gmail.com** with `[security]` in the subject, or use
+1. Email **alsyedrafiahmed@gmail.com** with `[security]` in the subject, or use
    GitHub's *Report a vulnerability* button (Security → Advisories) if the
    repository is public.
 2. Include: affected file/entry point, how to reproduce, and — if possible —

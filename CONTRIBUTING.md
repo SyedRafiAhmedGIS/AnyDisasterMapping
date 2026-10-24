@@ -79,4 +79,4 @@ not importable; the smoke suite will fail if a new domain lacks a config.
 
 ## 6. Questions
 
-Open a GitHub issue or email qschrx@gmail.com.
+Open a GitHub issue or email alsyedrafiahmed@gmail.com.
