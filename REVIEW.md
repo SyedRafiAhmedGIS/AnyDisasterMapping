@@ -7,7 +7,7 @@
 
 ## 1. Executive Summary
 
-AnyDisasterMapping is the official companion repository of the review paper *"Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives"* (Chen et al., SSRN 6725082, RIKEN AIP / UTokyo / UN Satellite Centre et al.). It unifies 13 satellite disaster-mapping datasets across 4 domains (flood, infrastructure damage, landslide, wildfire) with 31 registered model factories behind a single config-driven trainer supporting three task contracts: segmentation (`seg`), change detection (`cd`), and semantic change detection (`scd`).
+AnyDisasterMapping is the official companion repository of the review paper *"Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives"* (SSRN 6725082, RIKEN AIP / UTokyo / UN Satellite Centre et al.). It unifies 13 satellite disaster-mapping datasets across 4 domains (flood, infrastructure damage, landslide, wildfire) with 31 registered model factories behind a single config-driven trainer supporting three task contracts: segmentation (`seg`), change detection (`cd`), and semantic change detection (`scd`).
 
 The engineering quality of the core is **high**. The trainer (809 lines) is a genuinely unified runtime with three loss branches, lazy scheduler construction, auto-resume, and sliding-window inference; the task handlers cleanly separate tuple contracts; the registry uses lazy imports so heavy model dependencies are only paid when a model is actually instantiated. Runtime verification for this review confirmed the full train→test loop works end-to-end on synthetic data for both `seg` and `cd` (11/12 smoke runs pass; the 12th requires a GPU triton kernel).
 

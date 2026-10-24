@@ -3,7 +3,7 @@ site_description: >-
   A unified satellite disaster-mapping framework: 3 task contracts (seg / cd / scd),
   34 registered models, 24 benchmark datasets, 628 configs — companion to
   SSRN 6725082 (Earth Observation for Disaster Mapping).
-site_url: https://chenhongruixuan.github.io/AnyDisasterMapping/
+site_url: https://syedrafiahmedgis.github.io/AnyDisasterMapping/
 repo_url: https://github.com/SyedRafiAhmedGIS/AnyDisasterMapping
 repo_name: SyedRafiAhmedGIS/AnyDisasterMapping
 

@@ -210,7 +210,7 @@ Fresh `pip install -e .` failed without workarounds. Now
 kept because vendored Mask2Former / CLIPDPT / SAMDPT use the 4.x API.
 
 ### 1.3 GitHub-username placeholder tokens (58 occurrences / 28 files)
-All `YOUR_` + `GITHUB_` + `USERNAME`-style placeholder tokens replaced — first with the upstream repository owner `ChenHongruixuan`,
+All `YOUR_` + `GITHUB_` + `USERNAME`-style placeholder tokens replaced — first with the upstream repository owner the original framework,
 then rebranded to this distribution's owner **`SyedRafiAhmedGIS`**:
 - 26 links in 13 Colab notebooks ("Open In Colab" + repo badges — previously
   guaranteed 404s)
