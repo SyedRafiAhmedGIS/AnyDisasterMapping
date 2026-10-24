@@ -1,5 +1,11 @@
 AnyDisasterMapping-extended
-Copyright (c) the AnyDisasterMapping-extended authors
+Copyright (c) 2026 Syed Rafi Ahmed (extended distribution and maintenance)
+
+This distribution includes and extends AnyDisasterMapping, Copyright (c)
+Hongruixuan Chen and the AnyDisasterMapping authors,
+https://github.com/ChenHongruixuan/AnyDisasterMapping (original code under
+the Apache License, Version 2.0). The original README is preserved at
+docs/UPSTREAM_README.md.
 
 LICENSING DECISION (2026-10-22): this distribution is RESEARCH-ONLY.
 The original code of this repository is licensed under the Apache License,
