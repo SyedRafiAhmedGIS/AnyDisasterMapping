@@ -8,7 +8,7 @@ model:
     in_channels: 8
     num_classes: 3
     backbone: mit_b2
-    pretrained_weight: pretrained_weight/mit_b2.pth
+    pretrained_weight: ""
 dataset:
   name: urbansar
   train:
