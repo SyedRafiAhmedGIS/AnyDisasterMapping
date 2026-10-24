@@ -11,7 +11,7 @@
 | OA | 0.9946 | 0.9295 | 0.9877 | 0.9968 | 0.9730 |
 | mIoU | 0.5576 | 0.3650 | 0.5084 | 0.5034 | 0.4172 |
 
-- Note: a sampled scan of the testing ground truth found only labels  - class 2 (urban flood) is absent from the test GT, so its per-class metrics are 0.0 across all events. This is a property of the benchmark testing set, not an evaluation failure.
+- Note: a sampled scan of the testing ground truth found only labels {0, 1} - class 2 (urban flood) is absent from the test GT, so its per-class metrics are 0.0 across all events. This is a property of the benchmark testing set, not an evaluation failure.
 - test_weihui / per_class_iou: [0.9945649276343422, 0.6782461565359358, 0.0]
 - test_weihui / per_class_f1: [0.9972750086906159, 0.8082796581815, 0.0]
 - test_weihui / per_class_precision: [0.9982431473194205, 0.745759308931117, 0.0]
